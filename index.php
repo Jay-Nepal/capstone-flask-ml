@@ -1,3 +1,7 @@
+<?php
+include 'db_connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,26 +23,24 @@
 			<div class="flex-links">
 				<ul class="nav-bar">
 					<li class="nav-item">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li class="nav-item">
-						<a href="claim.html">Claim Expenses</a>
+						<a href="claim.php">Claim Expenses</a>
 					</li>
 					<li class="nav-item">
-						<a href="dashboard.html">Dashboard</a>
+						<a href="dashboard.php">Dashboard</a>
 					</li>
 				</ul>
 				<div class="flex-icons">
 					<i class="fas fa-user"></i>
 					<ul class="user-menu">
 						<li>Hi, Guest!</li>
-						<li><a href="#login">
-              <a href="login.html">Login</a>
-            </li>
-						<li><a href="#about">Register</a></li>
+						<li><a href="login.php">Login</a></li>
+						<li><a href="registration.php">Register</a></li>
 					</ul>
 				</div>
 			</div>
@@ -55,17 +57,17 @@
             <h1>LightXpense</h1>
             <p>You can effortlessly claim your expenses in just one go by snapping a photo of your receipt</p>
             <div class="start-button">
-            <a href="claim.html">Claim Now</a>
+            <a href="claim.php">Claim Now</a>
             </div>
         </div>
     </div>
   </div>
 <!--End Welcome-->
 
-<!-- Start What We Do-->
+<!-- Start Services-->
   <div class="do_section">
     <div class="intro-text">
-      <h2>- What we do -</h2>
+      <h2>- Services -</h2>
     </div>
     <div class="features">
         <div class="container">
@@ -92,6 +94,6 @@
         </div>
       </div>
   </div>
-<!--End What We Do-->
+<!--End Services->
 
 </body>

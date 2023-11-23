@@ -21,24 +21,24 @@
           <div class="flex-links">
             <ul class="nav-bar">
               <li class="nav-item">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a href="about.html">About</a>
+                <a href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a href="claim.html">Claim Expenses</a>
+                <a href="claim.php">Claim Expenses</a>
               </li>
               <li class="nav-item">
-                <a href="dashboard.html">Dashboard</a>
+                <a href="dashboard.php">Dashboard</a>
               </li>
             </ul>
             <div class="flex-icons">
               <i class="fas fa-user"></i>
               <ul class="user-menu">
                 <li>Hi, Guest!</li>
-                <li><a href="#login">Login</a></li>
-                <li><a href="#about">Register</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="registration.php">Register</a></li>
               </ul>
             </div>
           </div>
@@ -68,12 +68,12 @@
             style="font-size: 100%; color: darkgray"
           ></i>
         </div>
-        <a href="claim.html" class="login-btn">LOGIN</a>
+        <a href="index.php" class="login-btn">LOGIN</a>
         <div class="forgot">
           <a href="#" class="forgot">Forgot Username/Password?</a>
         </div>
         <div class="create">
-          <a href="#">Create Your Account</a>
+          <a href="registration.php">Create Your Account</a>
           <i
             class="fas fa-arrow-alt-circle-right"
             style="font-size: 100%; color: darkgray"

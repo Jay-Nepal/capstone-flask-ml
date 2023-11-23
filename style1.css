@@ -160,7 +160,7 @@ body {
   color: #ffffff;
 }
 
-/* start what we do */
+/* start services */
 .intro-text h2 {
   text-align: center;
   font-size: 35px;
@@ -207,6 +207,133 @@ body {
   color: #777;
   font-size: 16px;
 }
+/* end services*/
+
+/* start about*/
+.about{
+  text-align: center;
+}
+
+.about-container{
+  align-items: center;
+}
+
+.about .heading {
+  padding: 50px 0;
+  margin: 0;
+  position: relative;
+}
+
+.about .heading::after{
+  content: "";
+  width: 150px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 5px solid #20b2aa;
+  padding-top: 25px;
+}
+
+.about-title {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vision-mission {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  text-align: center;
+}
+
+.vision-mission img{
+  width: 200px;
+  height: 200px;
+}
+
+.vision, .mission {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.vision p, .mission p{
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: justify;
+  font-size: 17px;
+}
+
+.team-member{
+  display: flex;
+  margin: 30px;
+  justify-content: space-between;
+}
+
+.team-name{
+  margin: 30px;
+}
+
+.team-name img {
+  width: 150px;
+  height: 150px;
+}
+
+.team-name img:hover {
+  transform:scale(1.2);
+  z-index: 1;
+}
+/* end about*/
+
+
+/* start claim status bar*/
+.status-bar {
+  display: flex;
+  align-items: center;
+  margin: 50px auto;
+  width: 45%;
+  justify-content: space-between;
+}
+
+.dot-green, .dot-grey {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.dot-green {
+  background: var(--light-green);
+}
+
+.dot-grey {
+  background-color: #ccc;
+}
+
+.line-grey, .line-green {
+  height: 2px;
+  background-color: #ccc;
+  width: 200px;
+  margin: 0 5px;
+}
+
+.line-green {
+  background: var(--light-green);
+}
+
+.dot-label {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #333;
+}
+/* end claim status bar*/
 
 /* start claim */
 .claim .container {
@@ -315,7 +442,7 @@ body {
 
 .image {
   position: relative;
-  width: 90%;
+  width: 80%;
   height: 75vh;
   background: var(--light-grey);
   border-radius: 15px;
@@ -324,6 +451,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .details-container {
@@ -357,7 +485,7 @@ body {
   width: 65%;
   height: 45px;
   background: var(--light-grey);
-  color: var(--dark-green);
+  color: #333;
 }
 
 .buttons {
