@@ -1,3 +1,3 @@
 # capstone-flask-ml
 
-Internal repo for version control of web-development and ML integration
+Code repo for Capstone LightXpense project
