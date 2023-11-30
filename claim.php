@@ -9,7 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
   </head>
 
   <body>
@@ -64,22 +65,25 @@
     </div>
     <!--End Status Bar-->
      
-    <!-- Start Claim Expenses-->
+  <!-- Start Claim Expenses -->
+  <form action="">
     <div class="claim">
       <div class="container">
         <input type="file" id="file" accept="image/*" hidden>
-          <div class="img-area">
-            <h3>Upload Your Receipt</h3>
-            <p>The file should be in <span>.png, .jpg, .jpeg, pdf</span></p>
-            <i class="fas fa-solid fa-cloud-arrow-up"></i>
-          </div>
-          <div class="claim-buttons">
-            <label for="file" class="select-image">Select Image</label>
-            <a href="Confirmation.php" class="submit">Submit</a>
-          </div>
+        <div class="img-area">
+          <h3>Upload Your Receipt</h3>
+          <p>The file should be in <span>.png, .jpg, .jpeg, pdf</span></p>
+          <i class="fas fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <div class="claim-buttons">
+          <label for="file" class="select-image">Select Image</label>
+          <a href="confirmation.php" class="submit">Submit</a>
+        </div>
       </div>
     </div>
-    <!--End Claim Expenses-->
+  </form>
+  <!-- End Claim Expenses -->
   
+  <script type="text/javascript" src="js/image_upload.js"></script>
   </body>
 </html>

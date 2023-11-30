@@ -210,11 +210,11 @@ body {
 /* end services*/
 
 /* start about*/
-.about{
+.about {
   text-align: center;
 }
 
-.about-container{
+.about-container {
   align-items: center;
 }
 
@@ -224,7 +224,7 @@ body {
   position: relative;
 }
 
-.about .heading::after{
+.about .heading::after {
   content: "";
   width: 150px;
   display: block;
@@ -244,22 +244,24 @@ body {
 .vision-mission {
   display: flex;
   justify-content: center;
-  align-items:flex-start;
+  align-items: flex-start;
   text-align: center;
 }
 
-.vision-mission img{
+.vision-mission img {
   width: 200px;
   height: 200px;
 }
 
-.vision, .mission {
+.vision,
+.mission {
   width: 50%;
   box-sizing: border-box;
   padding: 20px;
 }
 
-.vision p, .mission p{
+.vision p,
+.mission p {
   width: 60%;
   margin: 0 auto;
   padding-top: 20px;
@@ -267,13 +269,13 @@ body {
   font-size: 17px;
 }
 
-.team-member{
+.team-member {
   display: flex;
   margin: 30px;
   justify-content: space-between;
 }
 
-.team-name{
+.team-name {
   margin: 30px;
 }
 
@@ -283,11 +285,10 @@ body {
 }
 
 .team-name img:hover {
-  transform:scale(1.2);
+  transform: scale(1.2);
   z-index: 1;
 }
 /* end about*/
-
 
 /* start claim status bar*/
 .status-bar {
@@ -298,7 +299,8 @@ body {
   justify-content: space-between;
 }
 
-.dot-green, .dot-grey {
+.dot-green,
+.dot-grey {
   position: relative;
   width: 20px;
   height: 20px;
@@ -314,7 +316,8 @@ body {
   background-color: #ccc;
 }
 
-.line-grey, .line-green {
+.line-grey,
+.line-green {
   height: 2px;
   background-color: #ccc;
   width: 200px;
@@ -367,6 +370,12 @@ body {
   font-size: 200px;
   color: rgba(255, 255, 255, 0.5);
   z-index: 1;
+}
+
+.img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
 }
 
 .img-area h3 {
