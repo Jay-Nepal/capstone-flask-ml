@@ -1,5 +1,3 @@
-# capstone-flask-ml
-
 ## Code repo for Capstone LightXpense project
 
 ## What it accomplishes
