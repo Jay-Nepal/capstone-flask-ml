@@ -1,3 +1,7 @@
+<?php
+include 'db_connection.php';
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="no-js oldie" lang="en"> <![endif]-->
 <!--[if IE 9]><html class="no-js oldie ie9" lang="en"> <![endif]-->
@@ -60,7 +64,7 @@
           </li>
         </ul>
 
-        <a href="login.html" title="sign-up" class="button button-primary cta"
+        <a href="login.php" title="sign-up" class="button button-primary cta"
           >Login</a
         >
       </nav>

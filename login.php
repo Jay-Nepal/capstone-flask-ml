@@ -1,11 +1,15 @@
+<?php
+include 'db_connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login V2</title>
+    <title>LightXpense</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="shortcut icon" href="images/logo2.png" type="image/png" />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
@@ -59,13 +63,13 @@
     
   <header id="header">
       <div class="header-logo">
-        <a href="index.html">LightXpense</a>
+        <a href="index.php">LightXpense</a>
       </div>
 
       <nav id="header-nav-wrap">
         <ul class="header-main-nav">
           <li>
-            <a href="index.html" title="home">Return Home</a>
+            <a href="index.php" title="home">Return Home</a>
           </li>
           <li><a href="#about" title="about">Contact Support</a></li>
       </nav>
@@ -112,7 +116,7 @@
                 Reach your workspace admin for issues <br>
               </span>
 
-              <a class="txt2" href="#"> Or contact our support</a>
+              <a class="txt2" href="mainpage.php?module=dashboard&page=home"> Or contact our support</a>
             </div>
           </form>
         </div>
