@@ -1825,6 +1825,11 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
  *
  * ------------------------------------------------------------------- */
 
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 #about {
   min-height: 786px;
   background: #ffffff;

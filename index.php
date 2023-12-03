@@ -31,6 +31,7 @@ include 'db_connection.php';
    ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src="https://kit.fontawesome.com/7990f7dee1.js" crossorigin="anonymous"></script>
 
     <!-- favicons
 	================================================== -->
@@ -141,7 +142,7 @@ include 'db_connection.php';
           <h1 class="intro-header" data-aos="fade-up">About Us</h1>
         </div>
         <div class="col-eight">
-          <p class="lead" data-aos="fade-up">
+          <p align='justify' class="lead" data-aos="fade-up">
             Our journey began with the simple idea that technology could
             revolutionize the way employees interact with their expenses, making
             reimbursement a breeze. We aim to re-invent how reimbursement is
@@ -154,70 +155,44 @@ include 'db_connection.php';
       <div class="row about-features">
         <div class="features-list block-1-3 block-m-1-2 block-mob-full group">
           <div class="bgrid feature" data-aos="fade-up">
-            <span class="icon"><i class="icon-window"></i></span>
+            <span class="icon"><i class="fa-solid fa-camera-retro"></i></span>
 
             <div class="service-content">
-              <h3>Fully Resposive</h3>
+              <h3>Snap & Claim</h3>
 
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit.
+              <p align='justify'>
+              Simplify claims submission by only submitting one photo and increases compliance.
               </p>
             </div>
           </div>
           <!-- /bgrid -->
 
           <div class="bgrid feature" data-aos="fade-up">
-            <span class="icon"><i class="icon-image"></i></span>
+            <span class="icon"><i class="fa-solid fa-face-smile-beam"></i></span>
 
             <div class="service-content">
-              <h3>Retina Ready</h3>
+              <h3>Convenience</h3>
 
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit.
+              <p align='justify'>
+              Enhance your financial management with integrated expense data, providing your company the flexibility to oversee spending effortlessly, anytime, and enabling employees to submit expenses conveniently from any location
               </p>
             </div>
           </div>
           <!-- /bgrid -->
 
           <div class="bgrid feature" data-aos="fade-up">
-            <span class="icon"><i class="icon-paint-brush"></i></span>
+            <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
 
             <div class="service-content">
-              <h3>Stylish Design</h3>
+              <h3>Analytics</h3>
 
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit.
+              <p align='justify'>
+                Integrate claims submission with dashboard view, enabling managers to identify trends, assess risk, and make informed, precise decisions
               </p>
             </div>
           </div>
         </div>
         <!-- end features-list -->
-      </div>
-
-      <div class="row about-bottom-image">
-        <img
-          src="images/app-screens-1200.png"
-          srcset="
-            images/app-screens-600.png   600w,
-            images/app-screens-1200.png 1200w,
-            images/app-screens-2800.png 2800w
-          "
-          sizes="(max-width: 2800px) 100vw, 2800px"
-          alt="App Screenshots"
-          data-aos="fade-up"
-        />
       </div>
       <!-- end about-features -->
     </section>
@@ -233,7 +208,7 @@ include 'db_connection.php';
               <div class="about-how-steps block-1-2 block-tab-full group">
                 <div class="bgrid step" data-item="1">
                   <h3>Sign-Up</h3>
-                  <p>
+                  <p align='justify'>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                     quae ab illo inventore veritatis et quasi architecto beatae
@@ -243,7 +218,7 @@ include 'db_connection.php';
     
                 <div class="bgrid step" data-item="2">
                   <h3>Upload</h3>
-                  <p>
+                  <p align='justify'>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                     quae ab illo inventore veritatis et quasi architecto beatae
@@ -253,7 +228,7 @@ include 'db_connection.php';
     
                 <div class="bgrid step" data-item="3">
                   <h3>Create</h3>
-                  <p>
+                  <p align='justify'>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                     quae ab illo inventore veritatis et quasi architecto beatae
@@ -263,7 +238,7 @@ include 'db_connection.php';
     
                 <div class="bgrid step" data-item="4">
                   <h3>Publish</h3>
-                  <p>
+                  <p align='justify'>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                     quae ab illo inventore veritatis et quasi architecto beatae
@@ -288,7 +263,7 @@ include 'db_connection.php';
             Download Our App Today!
           </h1>
 
-          <p class="lead" data-aos="fade-up">
+          <p align='justify' class="lead" data-aos="fade-up">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -321,7 +296,7 @@ include 'db_connection.php';
           <div class="col-three md-1-3 tab-full footer-info">
             <div class="footer-logo"></div>
 
-            <p>
+            <p align='justify'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
               lacinia eget consectetur sed, convallis at tellus.

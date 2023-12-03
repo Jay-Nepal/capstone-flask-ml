@@ -7,10 +7,10 @@ class myConnection
     // __construct run after call myConnection
     function __construct(){
 
-        $host = "sql113.byethost3.com";
-        $user = "b3_35433977";
-        $pass = "c0n3q18k";
-        $db = "b3_35433977_lightxpense";
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $db = "squarewo_sunway";
 
         $conn = $this->mysqli = new mysqli($host,$user,$pass,$db);
 
