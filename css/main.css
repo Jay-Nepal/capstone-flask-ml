@@ -2462,11 +2462,11 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
 }
 
 /* ===================================================================
- *  14. download - (_layout.scss)
+ *  14. ourteam - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
 
-#download {
+#ourteam {
   background: #39b54a;
   color: #b2fabc;
   padding-top: 12rem;
@@ -2474,11 +2474,11 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   text-align: center;
 }
 
-#download h1 {
+#ourteam h1 {
   color: #ffffff;
 }
 
-#download h1::before {
+#ourteam h1::before {
   background-color: #2a9038;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -2486,45 +2486,28 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   transform: translateX(-50%);
 }
 
-#download .lead {
-  color: #b2fabc;
-  margin-top: 4.8rem;
+#ourteam .row {
+  max-width: auto;
 }
 
-#download .row {
-  max-width: 800px;
+.team-member {
+  display: flex;
+  margin: 30px;
+  justify-content: space-between;
 }
 
-#download .download-badges {
-  list-style: none;
-  margin: 0;
-  text-align: center;
+.team-name {
+  margin: 30px;
 }
 
-#download .download-badges li {
-  display: inline-block;
-  margin: 0 7.5px;
-  padding-left: 0;
+.team-name img {
+  width: 150px;
+  height: 150px;
 }
 
-#download .download-badges li a {
-  display: block;
-  width: 230px;
-  height: 71px;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 230px 71px;
-}
-
-#download .download-badges li a.badge-appstore {
-  background-image: url("../images/appstore.png");
-}
-
-#download .download-badges li a.badge-googleplay {
-  background-image: url("../images/google-play.png");
+.team-name img:hover {
+  transform: scale(1.2);
+  z-index: 1;
 }
 
 /* ------------------------------------------------------------------- 

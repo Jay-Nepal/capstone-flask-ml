@@ -2,6 +2,7 @@
 include 'db_connection.php';
 ?>
 
+
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="no-js oldie" lang="en"> <![endif]-->
 <!--[if IE 9]><html class="no-js oldie ie9" lang="en"> <![endif]-->
@@ -59,8 +60,8 @@ include 'db_connection.php';
             >
           </li>
           <li>
-            <a class="smoothscroll" href="#download" title="download"
-              >Download</a
+            <a class="smoothscroll" href="#ourteam" title="ourteam"
+              >Our Team</a
             >
           </li>
         </ul>
@@ -96,7 +97,7 @@ include 'db_connection.php';
             </h1>
 
             <div class="buttons" data-aos="fade-up">
-              <a href="#download" class="smoothscroll button stroke">
+              <a href="#ourteam" class="smoothscroll button stroke">
                 <span class="icon-circle-down" aria-hidden="true"></span>
                 Preview
               </a>
@@ -254,39 +255,42 @@ include 'db_connection.php';
           <!-- end about-bottom-image -->
       </section>  
 
-    <!-- download
+    <!-- our team
     ================================================== -->
-    <section id="download">
+    <section id="ourteam">
       <div class="row">
         <div class="col-full">
           <h1 class="intro-header" data-aos="fade-up">
-            Download Our App Today!
+            Our Team
           </h1>
-
-          <p align='justify' class="lead" data-aos="fade-up">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate
-          </p>
-
-          <ul class="download-badges">
-            <li>
-              <a href="#" title="" class="badge-appstore" data-aos="fade-up"
-                >App Store</a
-              >
-            </li>
-            <li>
-              <a href="#" title="" class="badge-googleplay" data-aos="fade-up"
-                >Play Store</a
-              >
-            </li>
-          </ul>
+          <div class="team">
+            <div class="team-member">
+                <div class="team-name">
+                <img src="images/LKK.png">
+                <p>Low Kah Keng</p>
+              </div>
+              <div class="team-name">
+                <img src="images/YYW.png">
+                <p>Yoon Yen Wei</p>	
+              </div>
+              <div class="team-name">
+                <img src="images/TYX.png">
+                <p>Tai Yong Xin</p>
+              </div>
+              <div class="team-name">
+                <img src="images/AB.png">
+                <p>Aarogya Banepali</p>
+              </div>
+              <div class="team-name">
+                <img src="images/SZT.png">
+              <p>Siow Zi Ting</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- end download -->
+    <!-- end our team -->
 
     <!-- footer
     ================================================== -->
@@ -297,10 +301,7 @@ include 'db_connection.php';
             <div class="footer-logo"></div>
 
             <p align='justify'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
-              lacinia eget consectetur sed, convallis at tellus.
-            </p>
+              We introduce a cutting-edge budgeted solution for corporate reimbursement processes. Our advanced system efficiently auto-classifies expenses, providing companies with a powerful dashboard for enhanced financial management and streamlined operational efficiency. Elevate your company's reimbursement workflows with LighXpense.</p>
 
             <ul class="footer-social-list">
               <li>
@@ -326,15 +327,15 @@ include 'db_connection.php';
             <h4>Contact</h4>
 
             <p>
-              1600 Amphitheatre Parkway<br />
-              Mountain View, CA <br />
-              94043 US<br />
+              5, Jalan Universiti,<br />
+              Bandar Sunway,<br />
+              47500 Petaling Jaya, Selangor<br />
             </p>
 
             <p>
-              someone@dazzlesite.com <br />
-              Phone: (+63) 555 1212 <br />
-              Fax: (+63) 555 0100
+              LightXpense@gmial.com <br />
+              Phone: (+60) 17-667 0996 <br />
+              Fax: (+60) 18-374 0028
             </p>
           </div>
           <!-- end footer-contact -->
@@ -343,23 +344,18 @@ include 'db_connection.php';
             <h4>Site Links</h4>
 
             <ul class="list-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#howitworks">How it Works</a></li>
+              <li><a href="#ourteam">Our Teams</a></li>
             </ul>
           </div>
           <!-- end footer-site-links -->
 
           <div class="col-four md-1-2 tab-full footer-subscribe">
-            <h4>Our Newsletter</h4>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+
 
             <div class="subscribe-form">
               <form id="mc-form" class="group" novalidate="true">

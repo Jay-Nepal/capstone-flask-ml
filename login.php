@@ -71,7 +71,7 @@ include 'db_connection.php';
           <li>
             <a href="index.php" title="home">Return Home</a>
           </li>
-          <li><a href="#about" title="about">Contact Support</a></li>
+          <li><a href="admin.php?module=dashboard&page=admin" title="about">Contact Support</a></li>
       </nav>
 
       <a class="header-menu-toggle" href="#"><span>Menu</span></a>
@@ -116,7 +116,7 @@ include 'db_connection.php';
                 Reach your workspace admin for issues <br>
               </span>
 
-              <a class="txt2" href="mainpage.php?module=dashboard&page=home"> Or contact our support</a>
+              <a class="txt2" href="user.php?module=dashboard&page=home"> Or contact our support</a>
             </div>
           </form>
         </div>

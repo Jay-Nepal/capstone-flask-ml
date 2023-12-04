@@ -30,7 +30,6 @@ if(isset($_POST['post'])==1){
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -318,10 +317,10 @@ body {
     <!--End Status Bar-->
      
   <!-- Start Claim Expenses -->
-  <form action="">
+  <form action="upload.php" method="post" enctype="multipart/form-data">
     <div class="claim">
       <div class="container">
-        <input type="file" id="file" accept="image/*" hidden>
+        <input type="file" name="image" id="file" accept="image/*" hidden>
         <div class="img-area">
           <h3>Upload Your Receipt</h3>
           <p>The file should be in <span>.png, .jpg, .jpeg, pdf</span></p>
@@ -329,7 +328,7 @@ body {
         </div>
         <div class="claim-buttons">
           <label for="file" class="select-image">Select Image</label>
-          <a href="confirmation.php" class="submit">Submit</a>
+          <input type="submit" value="Upload Image" name="submit">
         </div>
       </div>
     </div>

@@ -75,13 +75,13 @@ if(isset($_GET['module'])=="Claim_Expense"){
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="mainpage.php?module=dashboard&page=home">
+            <a class="nav-link" aria-current="page" href="user.php?module=dashboard&page=home">
               <span data-feather="home"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mainpage.php?module=Claim%20Expense&page=expense">
+            <a class="nav-link" href="user.php?module=Claim%20Expense&page=expense">
               <span data-feather="file"></span>
               Claim Expense
             </a>
