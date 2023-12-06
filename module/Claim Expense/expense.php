@@ -20,41 +20,39 @@ if (isset($_POST['submit'])) {
           // Decode the JSON-like string into a PHP array
           $data = json_decode($output, true);
 
-
           if ($data === null || json_last_error() !== JSON_ERROR_NONE) {
-            echo "Failed to decode JSON string. Error: " . json_last_error_msg();
-        } else {
-          $status = $data['status'];
-          $label = $data['label'];
-          $category = urlencode($label);
-          $amount = $data['amount'];
-          $totalamount = urldecode($amount);
-
-          if ($status === 400) {
-            echo "The receipt you uploaded isn't in MYR";
+            // Display an error div with a close button
+            $error_message = "Failed to decode JSON string. Error: " . json_last_error_msg();
+            include('error_message.php'); // Include a separate file for error message display
           } else {
-            header("Location: user.php?module=Claim%20Expense&page=confirm&file_name=$file_path&category=$category&totalamount=$totalamount");
+            $status = $data['status'];
+            $label = $data['label'];
+            $category = urlencode($label);
+            $amount = $data['amount'];
+            $totalamount = urldecode($amount);
+
+            if ($status === 400) {
+              // Display an error div with a close button
+              $error_message = "The receipt you uploaded isn't in MYR";
+              include('error_message.php'); // Include a separate file for error message display
+            } else {
+              header("Location: user.php?module=Claim%20Expense&page=confirm&file_name=$file_path&category=$category&totalamount=$totalamount");
+            }
           }
-        }
-          // error_log($output);
-
-          // echo $output;
-          // if ($output) {
-          //     echo $output;
-          // } else {
-          //     echo 'Error executing Python script.';
-          // }
-
-          // header("Location: user.php?module=Claim%20Expense&page=confirm");
       } else {
-          echo 'Error uploading image.';
+          // Display an error div with a close button
+          $error_message = 'Error uploading image.';
+          include('error_message.php'); // Include a separate file for error message display
       }
   } else {
-      echo 'Invalid file format. Please upload a valid image (jpg, jpeg, png, gif).';
+      // Display an error div with a close button
+      $error_message = 'Invalid file format. Please upload a valid image (jpg, jpeg, png, gif).';
+      include('error_message.php'); // Include a separate file for error message display
   }
 }
 
 ?>
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 

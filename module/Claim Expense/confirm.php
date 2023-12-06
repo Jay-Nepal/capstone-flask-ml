@@ -4,6 +4,7 @@
         $image_path = urldecode($_GET['file_name']);
         $category = urldecode($_GET['category']);
         $amount = urldecode($_GET['totalamount']);
+        $claim_date = date('Y-m-d');
     }
 ?>
 
@@ -106,7 +107,7 @@ body {
 .img-area {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 26rem;
   background-color: rgb(209, 207, 207);
   margin-bottom: 30px;
   border-radius: 15px;
@@ -224,23 +225,22 @@ body {
 }
 
 .details {
-  margin: 10px;
+  margin: 0px;
 }
 
 .details h6 {
-  padding-bottom: 20px;
+  margin: 0;
 }
 
 .details-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .details-label {
   font-weight: bold;
-  margin-bottom: 20px;
   font-size: 15px;
+  margin: 0;
 }
 
 .details-input {
@@ -320,12 +320,16 @@ body {
 					<h3>Please confirm the details:</h3>
 					<h6>* If the amount is correct, please click "Proceed", otherwise, please click "Upload Again"</h6>
 					<div class="details-row">
-						<label class="details-label">Expense Category</label>
+						<label class="details-label">Expense category</label>
 						<input class="details-input" type="text" readonly value="<?php echo htmlspecialchars($category); ?>">
 					</div>
 					<div class="details-row">
 						<label class="details-label">Amount</label>
 						<input class="details-input" type="text" readonly value="RM<?php echo htmlspecialchars($amount); ?>">
+					</div>
+          <div class="details-row">
+						<label class="details-label">Date of expense claim</label>
+						<input class="details-input" type="text" readonly value="<?php echo htmlspecialchars($claim_date); ?>">
 					</div>
 				</div>
 				<div class="buttons">

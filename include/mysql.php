@@ -109,6 +109,18 @@ class myConnection
         return $total;
     }
 
+    function total_amount_admin(){
+        $total = 0;
+        $sqldata = "SELECT amount FROM chart_data";
+        $querydata = $this->query($sqldata);
+
+        while($getdata = $querydata->fetch_array()){
+            $total += $getdata['amount'];
+        }
+
+        return $total;
+    }
+
     function number_claims(){
         $totalClaims = 0;
         $sqldata = "SELECT COUNT(id) AS claim_count FROM chart_data";

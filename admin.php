@@ -2,7 +2,15 @@
 
 include("include/mysql.php");
 
-$db = new myConnection;
+session_start(); // Resume the session
+
+// Check if the user is logged in
+if (!isset($_SESSION['email'])) {
+    header('location: login.php'); // Redirect to login page if not logged in
+    exit();
+}
+
+// $db = new myConnection;
 
 ?>
 
