@@ -1,107 +1,51 @@
+<?php
+    if (isset($_GET['file_name'])) {
+        // Decode variables from URL
+        $image_path = urldecode($_GET['file_name']);
+        $category = urldecode($_GET['category']);
+        $amount = urldecode($_GET['totalamount']);
+    }
+?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-green: #006400;
+  --light-green: #20b2aa;
+  --light-grey: #f2f2f2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-size: 0.875rem;
+  background-image: url("image/Web.png");
+  background-size: cover;
 }
 
-.feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
-}
-
-/*
-   * Sidebar
-   */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  /* rtl:raw:
-    right: 0;
-    */
-  bottom: 0;
-  /* rtl:remove */
-  left: 0;
-  z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 767.98px) {
-  .sidebar {
-    top: 5rem;
-  }
-}
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
+html,
+body {
+  max-width: 100%;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #727272;
-}
-
-.sidebar .nav-link.active {
-  color: #2470dc;
-}
-
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-  color: inherit;
-}
-
-.sidebar-heading {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-/*
-   * Navbar
-   */
-
-.navbar-brand {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
-}
-
-.navbar .navbar-toggler {
-  top: 0.25rem;
-  right: 1rem;
-}
-
-.navbar .form-control {
-  padding: 0.75rem 1rem;
-  border-width: 0;
-  border-radius: 0;
-}
-
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-}
-
-/* Below for claim */
-
-/* start claim status bar*/
+  /* start claim status bar*/
 .status-bar {
   display: flex;
   align-items: center;
@@ -338,3 +282,55 @@ body {
 }
 
 /* end confirmation*/
+
+</style>
+
+<!--Start Status Bar-->
+<div class="status-bar">
+		<div class="dot-green">
+			<div class="dot-label">Claim</div>
+		</div>
+		<div class="line-green"></div>
+		<div class="dot-green">
+			<div class="dot-label">Confirmation</div>
+		</div>
+		<div class="line-grey"></div>
+		<div class="dot-grey">
+			<div class="dot-label">Dashboard</div>
+		</div>
+	</div>
+	<!--End Status Bar-->
+		
+	<!-- Start Confirmation-->
+		<div class="confirmation">
+			<div class="image-container">
+            <div class="img-area">
+            <?php
+                // Check if the file exists before attempting to display it
+                if (file_exists($image_path)) {
+                    echo "<img class='image' src='$image_path' alt='Image'>";
+                } else {
+                    echo "Image not found.";
+                }
+            ?>
+            </div>
+			</div>
+			<div class="details-container">
+				<div class="details">
+					<h3>Please confirm the details:</h3>
+					<h6>* If the amount is correct, please click "Proceed", otherwise, please click "Upload Again"</h6>
+					<div class="details-row">
+						<label class="details-label">Expense Category</label>
+						<input class="details-input" type="text" readonly value="<?php echo htmlspecialchars($category); ?>">
+					</div>
+					<div class="details-row">
+						<label class="details-label">Amount</label>
+						<input class="details-input" type="text" readonly value="RM<?php echo htmlspecialchars($amount); ?>">
+					</div>
+				</div>
+				<div class="buttons">
+					<a href="#" class="button-process">Proceed</a>
+					<a href="user.php?module=Claim%20Expense&page=expense" class="button-upload">Upload Again</a>
+			</div>
+		</div>
+	</div>

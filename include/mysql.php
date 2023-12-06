@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 class myConnection
 {
     // __construct run after call myConnection
@@ -48,55 +46,93 @@ class myConnection
 // data query by month
 // where month is set by its relevant label
     function data_chart_by_month(){
-        $data = 0;
         $datamon = [];
         $month = [1,2,3,4,5,6,7,8,9,10,11,12];
+
         foreach($month as $mon){
-            $sqldata = "SELECT date, month, dept, status_invoice, po_amount FROM chart_data WHERE month='$mon'";
+            $data = 0;  // Reset $data for each month
+            $sqldata = "SELECT date, month, category, amount FROM chart_data WHERE month='$mon'";
             $querydata = $this->query($sqldata);
-            //echo $sqldata;
+        
             while($getdata = $querydata->fetch_array()){
-                $data += $getdata['po_amount'];
+                $data += $getdata['amount'];
             }
+        
             $datamon[$mon] = $data;
         }
-        
 
         return $datamon;
     }
 
-    function invoice_status(){
+
+    function category(){
         $array = [];
-        $sqldata = "SELECT status_invoice FROM chart_data GROUP BY status_invoice";
+        $sqldata = "SELECT category FROM chart_data GROUP BY category";
         //echo $sqldata;
         $resdata = $this->query($sqldata);
         while($getdata = $resdata->fetch_array()){
-            $array[] = $getdata['status_invoice'];
+            $array[] = $getdata['category'];
            //$data += $getdata['status_invoice'];
         }
 
         return $array;
     }
 
-    function data_chart_by_status(){
-        $data = 0;
+    function data_chart_by_category(){
         $datamon = [];
-        $status = $this->invoice_status();
+        $category = $this->category();
 
-        foreach($status as $sta){
-            $sqldata = "SELECT date, month, dept, status_invoice, po_amount FROM chart_data 
-            WHERE status_invoice='$sta'";
+        foreach ($category as $sta) {
+            $data = 0;  // Reset $data for each category
+            $sqldata = "SELECT amount FROM chart_data WHERE category='$sta'";
             $querydata = $this->query($sqldata);
-            while($getdata = $querydata->fetch_array()){
-                $data += $getdata['po_amount'];
-            }
-            $datamon[$sta] = $data;
 
-            echo $sqldata;
+            while ($getdata = $querydata->fetch_array()) {
+                $data += $getdata['amount'];
+            }
+
+            $datamon[$sta] = $data;
         }
 
         return $datamon;
-
     }
 
+    function total_amount($email){
+        $total = 0;
+        $sqldata = "SELECT amount FROM chart_data where email = '$email'";
+        $querydata = $this->query($sqldata);
+
+        while($getdata = $querydata->fetch_array()){
+            $total += $getdata['amount'];
+        }
+
+        return $total;
+    }
+
+    function number_claims(){
+        $totalClaims = 0;
+        $sqldata = "SELECT COUNT(id) AS claim_count FROM chart_data";
+        $querydata = $this->query($sqldata);
+
+        if ($querydata) {
+            $result = $querydata->fetch_assoc();
+            $totalClaims = $result['claim_count'];
+        }
+
+        return $totalClaims;
+    }
+
+    function count_distinct_categories(){
+        $sqldata = "SELECT COUNT(DISTINCT category) AS category_count FROM chart_data";
+        $querydata = $this->query($sqldata);
+
+        $categoryCount = 0;
+
+        if ($querydata) {
+            $result = $querydata->fetch_assoc();
+            $categoryCount = $result['category_count'];
+        }
+
+        return $categoryCount;
+    }
 }

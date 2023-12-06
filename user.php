@@ -2,15 +2,18 @@
 
 include("include/mysql.php");
 
-$db = new myConnection;
+session_start(); // Resume the session
 
-$home = $claim_expense = "";
-
-if(isset($_GET['module'])=="Claim_Expense"){
-  $claim_expense = "active";
-} else if(isset($_GET['module'])=="dashboard"){
-  $home = "active";
+// Check if the user is logged in
+if (!isset($_SESSION['email'])) {
+    header('location: login.php'); // Redirect to login page if not logged in
+    exit();
+} else {
+  $f_name = $_SESSION['name'];
 }
+
+
+// $db = new myConnection;
 
 ?>
 
@@ -57,7 +60,7 @@ if(isset($_GET['module'])=="Claim_Expense"){
   <body>
 
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Welcome Dr. Narishah!</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Welcome <?php echo $f_name; ?></a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

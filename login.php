@@ -1,5 +1,40 @@
 <?php
+
 include 'db_connection.php';
+
+session_start();
+
+if(isset($_POST['submit'])){
+
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = mysqli_real_escape_string($conn, ($_POST['pass']));
+
+   $select_users = mysqli_query($conn, "SELECT * FROM `user_details` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+   if(mysqli_num_rows($select_users) > 0){
+
+      $row = mysqli_fetch_assoc($select_users);
+
+      $_SESSION['name'] = $row['first_name'];
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['department'] = $row['department'];
+
+      if($row['department'] == 'ADMIN'){
+    
+         header('location:admin.php?module=dashboard&page=admin');
+
+      }else{
+        
+         header('location:user.php?module=dashboard&page=home');
+
+      }
+
+   } else{
+      $errors[] = 'Incorrect email or password';
+   }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +106,7 @@ include 'db_connection.php';
           <li>
             <a href="index.php" title="home">Return Home</a>
           </li>
-          <li><a href="admin.php?module=dashboard&page=admin" title="about">Contact Support</a></li>
+          <li><a href="mailto:aarogya@banepali.com" title="about">Contact Support</a></li>
       </nav>
 
       <a class="header-menu-toggle" href="#"><span>Menu</span></a>
@@ -82,7 +117,7 @@ include 'db_connection.php';
     <div class="limiter">
       <div class="container-login100">
         <div class="wrap-login100">
-          <form class="login100-form validate-form">
+          <form class="login100-form validate-form" method="POST">
             <span class="login100-form-title p-b-26"> LightXpense login </span>
 
             <div
@@ -104,19 +139,30 @@ include 'db_connection.php';
               <span class="focus-input100" data-placeholder="Password"></span>
             </div>
 
-            <div class="container-login100-form-btn">
+            <div class="container-login100-form-btn" style="margin-bottom:1rem">
               <div class="wrap-login100-form-btn">
                 <div class="login100-form-bgbtn"></div>
-                <button class="login100-form-btn">Login</button>
+                <button class="login100-form-btn" type="submit" name="submit">Login</button>
               </div>
             </div>
+                      <!-- Error Message Display -->
+                      <?php if (!empty($errors)): ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <?php foreach ($errors as $error): ?>
+                            <strong>Error <br></strong> <?php echo $error; ?><br>
+                          <?php endforeach; ?>
+                        </div>
+                      <?php endif; ?>
 
-            <div class="text-center p-t-115">
+            <div class="text-center p-t-50">
               <span class="txt1">
                 Reach your workspace admin for issues <br>
               </span>
 
-              <a class="txt2" href="user.php?module=dashboard&page=home"> Or contact our support</a>
+              <a class="txt2" href="mailto:aarogya@banepali.com"> Or contact our support</a>
             </div>
           </form>
         </div>

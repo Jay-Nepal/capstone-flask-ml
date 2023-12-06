@@ -4,14 +4,6 @@ include("include/mysql.php");
 
 $db = new myConnection;
 
-$home = $claim_expense = "";
-
-if(isset($_GET['module'])=="Claim_Expense"){
-  $claim_expense = "active";
-} else if(isset($_GET['module'])=="dashboard"){
-  $home = "active";
-}
-
 ?>
 
 <!doctype html>
@@ -75,7 +67,7 @@ if(isset($_GET['module'])=="Claim_Expense"){
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="admin.php?module=dashboard&page=home">
+            <a class="nav-link" aria-current="page" href="admin.php?module=dashboard&page=admin">
               <span data-feather="home"></span>
               Dashboard
             </a>

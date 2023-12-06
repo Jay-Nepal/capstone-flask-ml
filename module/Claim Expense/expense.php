@@ -1,23 +1,57 @@
 <?php
 
-$identry = isset($_GET['id']);
+if (isset($_POST['submit'])) {
+  $uploadDir = 'uploads/'; // Directory to store uploaded images
+  $uploadName = basename($_FILES['image']['name']);
+  $uploadFile = $uploadDir . basename($_FILES['image']['name']);
+  $file_path = urlencode($uploadFile);
+  // Check if the file is an image
+  $imageFileType = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
+  $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-if(isset($_POST['post'])==1){
-    $category = $_POST['slxCategory'];
-    $description = $_POST['description'];
-    $quantity = $_POST['quantity'];
-    $price = $_POST['price'];
-    $currDate = date("Y-m-d H:i:s");
-    $identry = $_POST['identry'];
+  if (in_array($imageFileType, $allowedExtensions)) {
+      if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
 
-    if($identry > 0){
-        $sql = "UPDATE data_entry SET category='$category', `description`='$description', quantity='$quantity', price='$price' WHERE = id='$identry'";
-    } else {
-        // insert into tbl_entry
-        $sql = "INSERT INTO data_entry (category, `description`, quantity, price, created_date) VALUES ('$category', '$description','$quantity', '$price', '$currDate')";
-    }
+          // Call Python script with the uploaded file name
+          $pythonScript = 'uploads/main.py'; // Replace with the actual path to your Python script          
+          // Execute the command
+          $output = shell_exec("python $pythonScript $uploadName 2>&1");
+          
+          // Decode the JSON-like string into a PHP array
+          $data = json_decode($output, true);
 
-    $db->query($sql);
+
+          if ($data === null || json_last_error() !== JSON_ERROR_NONE) {
+            echo "Failed to decode JSON string. Error: " . json_last_error_msg();
+        } else {
+          $status = $data['status'];
+          $label = $data['label'];
+          $category = urlencode($label);
+          $amount = $data['amount'];
+          $totalamount = urldecode($amount);
+
+          if ($status === 400) {
+            echo "The receipt you uploaded isn't in MYR";
+          } else {
+            header("Location: user.php?module=Claim%20Expense&page=confirm&file_name=$file_path&category=$category&totalamount=$totalamount");
+          }
+        }
+          // error_log($output);
+
+          // echo $output;
+          // if ($output) {
+          //     echo $output;
+          // } else {
+          //     echo 'Error executing Python script.';
+          // }
+
+          // header("Location: user.php?module=Claim%20Expense&page=confirm");
+      } else {
+          echo 'Error uploading image.';
+      }
+  } else {
+      echo 'Invalid file format. Please upload a valid image (jpg, jpeg, png, gif).';
+  }
 }
 
 ?>
@@ -317,7 +351,7 @@ body {
     <!--End Status Bar-->
      
   <!-- Start Claim Expenses -->
-  <form action="upload.php" method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data">
     <div class="claim">
       <div class="container">
         <input type="file" name="image" id="file" accept="image/*" hidden>

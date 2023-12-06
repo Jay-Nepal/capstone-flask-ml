@@ -154,7 +154,7 @@ include 'db_connection.php';
       </div>
 
       <div class="row about-features">
-        <div class="features-list block-1-3 block-m-1-2 block-mob-full group">
+        <div class="features-list block-1-4 block-m-1-2 block-mob-full group">
           <div class="bgrid feature" data-aos="fade-up">
             <span class="icon"><i class="fa-solid fa-camera-retro"></i></span>
 
@@ -169,29 +169,43 @@ include 'db_connection.php';
           <!-- /bgrid -->
 
           <div class="bgrid feature" data-aos="fade-up">
-            <span class="icon"><i class="fa-solid fa-face-smile-beam"></i></span>
+            <span class="icon"><i class="fas fa-robot"></i></span>
 
             <div class="service-content">
-              <h3>Convenience</h3>
+              <h3>RPA Supported</h3>
 
               <p align='justify'>
-              Enhance your financial management with integrated expense data, providing your company the flexibility to oversee spending effortlessly, anytime, and enabling employees to submit expenses conveniently from any location
+              RPA-supported platform is meticulously designed to seamlessly classify and extract grand totals, eliminating the need for extensive HR involvement.
               </p>
             </div>
           </div>
           <!-- /bgrid -->
 
           <div class="bgrid feature" data-aos="fade-up">
-            <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+            <span class="icon"><i class="fa-solid fa-legal"></i></span>
 
             <div class="service-content">
-              <h3>Analytics</h3>
+              <h3>Chart of Account Compliance</h3>
 
               <p align='justify'>
-                Integrate claims submission with dashboard view, enabling managers to identify trends, assess risk, and make informed, precise decisions
+              Our system derives Human Resources classifications in accordance with the Chart of Accounts (COA), ensuring a standardized approach across your organization. This alignment eliminates the need for Finance teams to conduct time-consuming reclassifications when transitioning information from HR to Finance.
               </p>
             </div>
           </div>
+
+          <div class="bgrid feature" data-aos="fade-up">
+            <span class="icon"><i class="fa-solid fa-chart-pie"></i></span>
+
+            <div class="service-content">
+              <h3>Visualisation</h3>
+
+              <p align='justify'>
+              Integrate claims submission with dashboard view, enabling managers to identify trends, assess risk, and make informed, precise decisions.
+              </p>
+            </div>
+          </div>
+          <!-- /bgrid -->
+
         </div>
         <!-- end features-list -->
       </div>
@@ -210,40 +224,29 @@ include 'db_connection.php';
                 <div class="bgrid step" data-item="1">
                   <h3>Sign-Up</h3>
                   <p align='justify'>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                    quae ab illo inventore veritatis et quasi architecto beatae
-                    vitae dicta sunt explicabo.
+                    HR administrators take the initiative to create registered accounts for employees. Employees are then required to log in using the provided credentials, streamlining the process and ensuring secure access to the LightXpense platform.
                   </p>
                 </div>
     
                 <div class="bgrid step" data-item="2">
                   <h3>Upload</h3>
                   <p align='justify'>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                    quae ab illo inventore veritatis et quasi architecto beatae
-                    vitae dicta sunt explicabo.
+                    To claim reimbursement, employees capture the essence of their transactions by taking photos of the receipts. The simplicity of the process lies in the ability to effortlessly upload these images onto the LightXpense platform.
+                    This step ensures that the necessary documentation for reimbursement is promptly submitted in a convenient and user-friendly manner.
                   </p>
                 </div>
     
                 <div class="bgrid step" data-item="3">
                   <h3>Create</h3>
                   <p align='justify'>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                    quae ab illo inventore veritatis et quasi architecto beatae
-                    vitae dicta sunt explicabo.
+                    Upon successful upload of receipts, employees can delve into the LightXpense platform to create and access detailed information related to their reimbursement claims. This includes the ability to input and review relevant details, fostering transparency and accountability in the reimbursement workflow.
                   </p>
                 </div>
     
                 <div class="bgrid step" data-item="4">
                   <h3>Publish</h3>
                   <p align='justify'>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                    quae ab illo inventore veritatis et quasi architecto beatae
-                    vitae dicta sunt explicabo.
+                    Notifications regarding the status of reimbursement claims are automatically generated within LightXpense. A centralized dashboard facilitates the collaborative effort among employees, the HR department, and the Finance department. This shared platform allows stakeholders to publish, review, and manage claim information collectively, ensuring a streamlined and efficient process for all involved parties.
                   </p>
                 </div>
               </div>
