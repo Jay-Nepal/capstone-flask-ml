@@ -40,7 +40,6 @@ class myConnection
 	}
 
     function signout(){
-        session_destroy();
         return $this->pageredirect("index.php");
     }
 // data query by month

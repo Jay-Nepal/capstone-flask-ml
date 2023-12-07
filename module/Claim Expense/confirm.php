@@ -1,4 +1,11 @@
 <?php
+
+include 'db_connection.php';
+
+    if(isset($_SESSION['email'])){
+      $email = $_SESSION['email'];
+    }
+
     if (isset($_GET['file_name'])) {
         // Decode variables from URL
         $image_path = urldecode($_GET['file_name']);
@@ -6,6 +13,21 @@
         $amount = urldecode($_GET['totalamount']);
         $claim_date = date('Y-m-d');
     }
+
+    if (isset($_POST['submit'])) {
+      
+      $month = date('m', strtotime($claim_date));
+
+      $insert_query = "INSERT INTO chart_data (category, amount, date, month, email) VALUES ('$category', '$amount', '$claim_date', '$month', '$email')";
+  
+      if (mysqli_query($conn, $insert_query)) {
+          $message = "Claim successfully";
+      } else {
+          $message = "Error parsing data";
+      }
+  }
+   
+
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -285,6 +307,17 @@ body {
 
 </style>
 
+<?php
+if(isset($message)){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+}
+?>
+
 <!--Start Status Bar-->
 <div class="status-bar">
 		<div class="dot-green">
@@ -296,7 +329,7 @@ body {
 		</div>
 		<div class="line-grey"></div>
 		<div class="dot-grey">
-			<div class="dot-label">Dashboard</div>
+			<div class="dot-label">Submit</div>
 		</div>
 	</div>
 	<!--End Status Bar-->
@@ -315,7 +348,7 @@ body {
             ?>
             </div>
 			</div>
-			<div class="details-container">
+			<form class="details-container" method = "POST">
 				<div class="details">
 					<h3>Please confirm the details:</h3>
 					<h6>* If the amount is correct, please click "Proceed", otherwise, please click "Upload Again"</h6>
@@ -333,8 +366,10 @@ body {
 					</div>
 				</div>
 				<div class="buttons">
-					<a href="#" class="button-process">Proceed</a>
+					<button class="button-upload" type="submit" name="submit">Proceed</button>
 					<a href="user.php?module=Claim%20Expense&page=expense" class="button-upload">Upload Again</a>
-			</div>
+        </div>
+        </div>
+      </form>
 		</div>
 	</div>

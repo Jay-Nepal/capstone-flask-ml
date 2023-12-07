@@ -343,7 +343,7 @@ body {
 	    </div>
 	    <div class="line-grey"></div>
 	    <div class="dot-grey">
-		    <div class="dot-label">Dashboard</div>
+		    <div class="dot-label">Submit</div>
 	    </div>
     </div>
     <!--End Status Bar-->

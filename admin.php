@@ -87,7 +87,7 @@ if (!isset($_SESSION['email'])) {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#ADD here">
+            <a class="nav-link" href="admin.php?module=See%20All%20Claims&page=claims">
               <span data-feather="file"></span>
               See Employee Claims
             </a>

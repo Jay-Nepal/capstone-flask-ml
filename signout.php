@@ -2,6 +2,8 @@
 
 include("include/mysql.php");
 
-$db = new myConnection;
+$conn = new myConnection;
 
-return $db->signout();
+return $conn->signout();
+
+?>

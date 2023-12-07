@@ -29,7 +29,7 @@ if(isset($_SESSION['email'])) {
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm">
-                                        <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                        <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="visually-hidden">50%</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +214,7 @@ const myChart2 = new Chart(ctx2, {
             },
             title: {
                 display: true,
-                text: 'Claimed Amount (RM)',
+                text: 'Top 3 Claim categories (RM)',
                 font: {
                     size: 16
                 }
