@@ -21,10 +21,15 @@ include 'db_connection.php';
       $insert_query = "INSERT INTO chart_data (category, amount, date, month, email) VALUES ('$category', '$amount', '$claim_date', '$month', '$email')";
   
       if (mysqli_query($conn, $insert_query)) {
-          $message = "Claim successfully";
+          $message = urlencode("Claim successfully");
       } else {
-          $message = "Error parsing data";
+          $message = urlencode("Error submitting data, please try again");
       }
+
+      $label = urlencode($category);
+      $total = urlencode($amount);
+      $date = urlencode($claim_date);
+      header("Location: user.php?module=Claim%20Expense&page=submitted&status=$message&label=$label&total=$total&date=$date");
   }
    
 
@@ -306,17 +311,6 @@ body {
 /* end confirmation*/
 
 </style>
-
-<?php
-if(isset($message)){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-}
-?>
 
 <!--Start Status Bar-->
 <div class="status-bar">

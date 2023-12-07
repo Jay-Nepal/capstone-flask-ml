@@ -92,7 +92,7 @@ if (!isset($_SESSION['email'])) {
           <li class="nav-item">
             <a class="nav-link" href="user.php?module=See%20Your%20Claims&page=claims">
               <span data-feather="file"></span>
-              See your claim status
+              See all Your Claims
             </a>
           </li>
         </ul>
