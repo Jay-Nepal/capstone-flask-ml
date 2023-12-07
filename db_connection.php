@@ -3,7 +3,7 @@
    $dbhost = "localhost";
    $dbuser = "root";
    $dbpass = "";
-   $db = "squarewo_sunway";
+   $db = "lightXpense";
    
      // Create a connection  
      $conn = mysqli_connect($dbhost,  

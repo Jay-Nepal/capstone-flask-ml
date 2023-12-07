@@ -6,8 +6,8 @@ if(isset($_SESSION['email'])) {
     $db = new myConnection(); 
 
     $totalAmount = $db->total_amount_admin($email);
-    $numberClaims = $db->number_claims($email);
-    $categoryCounts = $db->count_distinct_categories($email);
+    $numberClaims = $db->number_claims_admin($email);
+    $categoryCounts = $db->count_distinct_categories_admin($email);
 
 } else {
     header('location:login.php');
@@ -44,7 +44,7 @@ if(isset($_SESSION['email'])) {
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
                         <div class="col me-2">
-                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Number of Claims</span></div>
+                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Total Number of Claims</span></div>
                             <div class="text-dark fw-bold h5 mb-0"><span><?php echo $numberClaims; ?></span></div>
                         </div>
                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
@@ -57,7 +57,7 @@ if(isset($_SESSION['email'])) {
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
                         <div class="col me-2">
-                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Categories Claimed</span></div>
+                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Categories of Claim</span></div>
                             <div class="text-dark fw-bold h5 mb-0"><span><?php echo $categoryCounts; ?></span></div>
                         </div>
                         <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
@@ -90,7 +90,7 @@ if(isset($_SESSION['email'])) {
     $data_nov = 11;
     $data_dec = 12;
 
-    $data_by_month = $db->data_chart_by_month();
+    $data_by_month = $db->data_chart_by_month_admin();
     $data_month = array();
     foreach($data_by_month as $key => $dtbm){
         $data_month[$key] = $dtbm;
@@ -102,7 +102,7 @@ if(isset($_SESSION['email'])) {
         $st[$s] = $stt;
     }
 
-    $status_inv = $db->data_chart_by_category();
+    $status_inv = $db->data_chart_by_category_admin();
     $data_status = array();
     foreach($status_inv as $bil => $dcbs){
         $data_status[$bil] = $dcbs;

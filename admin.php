@@ -81,9 +81,15 @@ if (!isset($_SESSION['email'])) {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin.php?module=Edit&page=add_employee">
+            <a class="nav-link" href="admin.php?module=Add%20Employee&page=add_employee">
               <span data-feather="file"></span>
               Add Employee
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ADD here">
+              <span data-feather="file"></span>
+              See Employee Claims
             </a>
           </li>
         </ul>
@@ -107,8 +113,6 @@ if (!isset($_SESSION['email'])) {
         }
 
     ?> 
-
-
     </main>
   </div>
 </div>

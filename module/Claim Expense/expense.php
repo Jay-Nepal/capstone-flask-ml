@@ -360,7 +360,7 @@ body {
         </div>
         <div class="claim-buttons">
           <label for="file" class="select-image">Select Image</label>
-          <input type="submit" value="Upload Image" name="submit">
+          <input type="submit" value="Upload Image" name="submit" class="select-image">
         </div>
       </div>
     </div>

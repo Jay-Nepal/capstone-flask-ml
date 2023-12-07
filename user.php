@@ -89,6 +89,12 @@ if (!isset($_SESSION['email'])) {
               Claim Expense
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ADDHERE">
+              <span data-feather="file"></span>
+              See your claim status
+            </a>
+          </li>
         </ul>
 
         

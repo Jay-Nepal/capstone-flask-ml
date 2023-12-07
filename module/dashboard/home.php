@@ -1,6 +1,5 @@
 <?php
 
-// session_start(); // Resume the session
 
 if(isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
@@ -23,7 +22,7 @@ if(isset($_SESSION['email'])) {
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
                         <div class="col me-2">
-                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>Total Amount (RM)</span></div>
+                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>Your Total Amount (RM)</span></div>
                             <div class="row g-0 align-items-center">
                                 <div class="col-auto">
                                     <div class="text-dark fw-bold h5 mb-0 me-3"><span><?php echo $totalAmount; ?></span></div>
@@ -45,7 +44,7 @@ if(isset($_SESSION['email'])) {
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
                         <div class="col me-2">
-                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Number of Claims</span></div>
+                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Your Number of Claims</span></div>
                             <div class="text-dark fw-bold h5 mb-0"><span><?php echo $numberClaims; ?></span></div>
                         </div>
                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
@@ -58,7 +57,7 @@ if(isset($_SESSION['email'])) {
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
                         <div class="col me-2">
-                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Categories Claimed</span></div>
+                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Categories you Claimed</span></div>
                             <div class="text-dark fw-bold h5 mb-0"><span><?php echo $categoryCounts; ?></span></div>
                         </div>
                         <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
@@ -69,10 +68,10 @@ if(isset($_SESSION['email'])) {
     </div>
     <div class="row">
         <div class="col" >
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart"></canvas>
         </div>
         <div class="col" >
-            <canvas id="myChart2" width="400" height="400"></canvas>
+            <canvas id="myChart2"></canvas>
         </div>
     </div>
 </div>
@@ -97,7 +96,7 @@ if(isset($_SESSION['email'])) {
         $data_month[$key] = $dtbm;
     }
 
-    $statuses = $db->category($email);
+    $statuses = $db->category();
     $st = array();
     foreach($statuses as $s => $stt){
         $st[$s] = $stt;
@@ -161,7 +160,7 @@ const myChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Monthly Employee Expenses (RM)',
+                text: 'Your Monthly Expense Claim Amount (RM)',
                 font: {
                     size: 16
                 }
@@ -185,7 +184,7 @@ const myChart = new Chart(ctx, {
 
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 const myChart2 = new Chart(ctx2, {
-    type: 'pie',
+    type: 'bar',
     data: {
         labels: ['<?php echo $st[0];?>','<?php echo $st[1];?>','<?php echo $st[2];?>'],
         datasets: [{
@@ -215,7 +214,7 @@ const myChart2 = new Chart(ctx2, {
             },
             title: {
                 display: true,
-                text: 'Claimed Amount Based on Category (RM)',
+                text: 'Claimed Amount (RM)',
                 font: {
                     size: 16
                 }

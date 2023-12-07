@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2023 at 07:03 AM
+-- Generation Time: Dec 07, 2023 at 05:35 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `squarewo_sunway`
+-- Database: `lightxpense`
 --
 
 -- --------------------------------------------------------
@@ -51,51 +51,6 @@ INSERT INTO `chart_data` (`id`, `date`, `month`, `email`, `category`, `amount`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_entry`
---
-
-CREATE TABLE `data_entry` (
-  `id` int(11) NOT NULL,
-  `category` varchar(30) NOT NULL,
-  `description` text NOT NULL,
-  `quantity` int(10) NOT NULL,
-  `price` double NOT NULL,
-  `created_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `data_entry`
---
-
-INSERT INTO `data_entry` (`id`, `category`, `description`, `quantity`, `price`, `created_date`) VALUES
-(1, '', '', 0, 0, '2022-05-07 06:54:35'),
-(2, '2', 'hjdjfhfkgkadshkghjasg', 2000, 25, '2022-05-11 06:34:16'),
-(3, '1', 'product A', 0, 700, '2022-05-17 14:15:04');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `role` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
-(1, 'demo', 'demo@testing.com', '$2y$10$X0KsIDYx3/TmUyVn8QNgauvprWup5iqWxWxv3jVt5Bju7KPJEtZrm', 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user_details`
 --
 
@@ -115,7 +70,8 @@ CREATE TABLE `user_details` (
 INSERT INTO `user_details` (`first_name`, `last_name`, `email`, `phone_number`, `password`, `department`) VALUES
 ('Aarogya', 'Banepali', 'aarogya@banepali.com', 176310348, 'test', 'sales'),
 ('Admin', 'AdminL', 'admin@company.com', 184265840, 'StrongPassword', 'ADMIN'),
-('John', 'Doe', 'john@gmail.com', 0, 'test', 'marketing');
+('John', 'Doe', 'john@gmail.com', 0, 'test', 'marketing'),
+('Aarogya', 'Banepali', 'lettertoaarogya@gmail.com', 12345, 'test', 'Marketing');
 
 --
 -- Indexes for dumped tables
@@ -127,18 +83,6 @@ INSERT INTO `user_details` (`first_name`, `last_name`, `email`, `phone_number`, 
 ALTER TABLE `chart_data`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
-
---
--- Indexes for table `data_entry`
---
-ALTER TABLE `data_entry`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD UNIQUE KEY `PRIMARY_KEY` (`id`) USING BTREE;
 
 --
 -- Indexes for table `user_details`
@@ -155,18 +99,6 @@ ALTER TABLE `user_details`
 --
 ALTER TABLE `chart_data`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300;
-
---
--- AUTO_INCREMENT for table `data_entry`
---
-ALTER TABLE `data_entry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
