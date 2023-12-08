@@ -1,2 +1,0 @@
-App 2500290 output: /opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib and slated for removal in Python 3.12; see the module's documentation for alternative uses
-App 2500290 output:   import sys, os, re, imp, threading, signal, traceback, socket, select, struct, logging, errno

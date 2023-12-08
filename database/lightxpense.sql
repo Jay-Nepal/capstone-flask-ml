@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2023 at 05:35 AM
+-- Generation Time: Dec 08, 2023 at 06:19 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,12 +41,12 @@ CREATE TABLE `chart_data` (
 --
 
 INSERT INTO `chart_data` (`id`, `date`, `month`, `email`, `category`, `amount`) VALUES
-(1, '2021-06-01', 6, 'john@gmail.com', 'Medical', 185),
-(2, '2021-06-01', 6, 'wick@gmail.com', 'Medical', 150),
-(3, '2021-06-01', 6, 'xin@gmail.com', 'Medical', 120),
-(4, '2021-06-01', 6, 'yywei@gmail.com', 'Entertainment', 150),
-(5, '2021-06-01', 6, 'john@gmail.com', 'Entertainment', 120),
-(6, '2021-06-01', 6, 'john@gmail.com', 'Fuel & Petrol', 20);
+(1, '2023-11-01', 11, 'john@gmail.com', 'Medical', 185),
+(2, '2023-11-02', 11, 'taiyongxin@gmail.com', 'Medical', 150),
+(3, '2023-11-02', 11, 'john@gmail.com', 'Medical', 120),
+(4, '2023-11-05', 11, 'john@gmail.com', 'Entertainment', 150),
+(5, '2023-11-05', 11, 'taiyongxin@gmail.com', 'Entertainment', 120),
+(6, '2023-11-06', 11, 'taiyongxin@gmail.com', 'Fuel & Petrol', 20);
 
 -- --------------------------------------------------------
 
@@ -68,10 +68,9 @@ CREATE TABLE `user_details` (
 --
 
 INSERT INTO `user_details` (`first_name`, `last_name`, `email`, `phone_number`, `password`, `department`) VALUES
-('Aarogya', 'Banepali', 'aarogya@banepali.com', 176310348, 'test', 'sales'),
-('Admin', 'AdminL', 'admin@company.com', 184265840, 'StrongPassword', 'ADMIN'),
 ('John', 'Doe', 'john@gmail.com', 0, 'test', 'marketing'),
-('Aarogya', 'Banepali', 'lettertoaarogya@gmail.com', 12345, 'test', 'Marketing');
+('Yong Xin', 'Tai', 'taiyongxin@gmail.com', 17, 'abc111', 'Sales & Marketing'),
+('Admin', 'Admin', 'yenwei.lightxpense@gmail.com', 18, 'abc111@', 'ADMIN');
 
 --
 -- Indexes for dumped tables
