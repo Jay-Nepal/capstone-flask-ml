@@ -8,7 +8,7 @@
 
 ### Where it is deployed:
 
-- Currently we maintain it at http://lightxpense.fast-page.org/
+- Currently we maintain it at http://lightxpense.byethost31.com/
 
 ### How to deploy:
 
