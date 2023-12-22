@@ -1431,7 +1431,7 @@ def extract_text_files(text):
 
 # Get input numbers from command line arguments
 file_name = str(sys.argv[1])
-path = r'C:\xampp\htdocs\lightxpense\uploads\\'
+path = 'uploads\\'
 image_name = path + file_name
 
 output = process(image_name)

@@ -102,7 +102,7 @@ include 'db_connection.php';
                 Preview
               </a>
               <a
-                href="http://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=39b54a"
+                href="https://youtu.be/O7Xq6C-AVPQ"
                 data-lity
                 class="button stroke"
               >
@@ -347,7 +347,7 @@ include 'db_connection.php';
             <h4>Site Links</h4>
 
             <ul class="list-links">
-              <li><a href="#">Login</a></li>
+              <li><a href="login.php">Login</a></li>
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#howitworks">How it Works</a></li>
