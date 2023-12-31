@@ -20,7 +20,7 @@ class myConnection
 
     }  
 
-    // nak pendekkan query writing
+    // Takes query as an argument and returns the output of the SQL query from the database connected
     function query($query){
 		return $this->mysqli->query($query);
 	}

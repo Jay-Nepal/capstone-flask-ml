@@ -73,7 +73,7 @@ include 'db_connection.php';
 
       <a class="header-menu-toggle" href="#"><span>Menu</span></a>
     </header>
-    <!-- /header -->
+
 
     <!-- home
    ================================================== -->

@@ -17,24 +17,6 @@
     th {
         background-color: #f2f2f2;
     }
-
-    th.edit-column {
-        width: 100px; /* Adjust the width as needed */
-        text-align: center; /* Center the content within th elements */
-    }
-
-    /* Adjust the width of the Edit button column */
-    td.edit-column {
-        width: 100px; /* Adjust the width as needed */
-        text-align: center; /* Center the content within th elements */
-    }
-
-    /* Style for the Edit button */
-    button.edit-button {
-        width: 100%;
-        padding: 5px;
-        box-sizing: border-box;
-    }
 </style>
 
 <?php
@@ -50,14 +32,11 @@ if (isset($_SESSION['email'])) {
 
 if ($result->num_rows > 0) {
     // Display table header
-    echo "<table><tr><th>Date</th><th>Category</th><th>Amount</th><th class='edit-column'>Edit</th></tr>";
+    echo "<table><tr><th>Date</th><th>Category</th><th>Amount</th></tr>";
 
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["date"] . "</td><td>" . $row["category"] . "</td><td> RM " . $row["amount"] . "</td>";
-
-        // Add a button for editing
-        echo "<td class='edit-column'><button class='edit-button' onclick=\"editRow(" . $row["id"] . ")\">Edit</button></td></tr>";
+        echo "<tr><td>" . $row["date"] . "</td><td>" . $row["category"] . "</td><td> RM " . $row["amount"] . "</td></tr>";
     }
 
     // Close table

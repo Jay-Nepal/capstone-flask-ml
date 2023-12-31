@@ -2533,7 +2533,7 @@ footer {
   padding-bottom: 4.2rem;
   font-size: 1.5rem;
   line-height: 2.7rem;
-  color: rgba(255, 255, 255, 0.25);
+  color: white;
   background-color: black;
 }
 
@@ -2553,6 +2553,10 @@ footer h4 {
   padding-bottom: 2.4rem;
   margin-bottom: 2.4rem;
   position: relative;
+}
+
+footer p {
+  color: white;
 }
 
 footer h4::before {
@@ -2577,7 +2581,7 @@ footer ul li {
 
 footer ul a,
 footer ul a:visited {
-  color: rgba(255, 255, 255, 0.25);
+  color: white;
 }
 
 .footer-logo {
