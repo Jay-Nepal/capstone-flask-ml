@@ -12,9 +12,6 @@ if (!isset($_SESSION['email'])) {
   $f_name = $_SESSION['name'];
 }
 
-
-// $db = new myConnection;
-
 ?>
 
 <!doctype html>

@@ -52,8 +52,6 @@ if (isset($_GET['id'])) {
             header("Location: user.php?module=See%20All%20Claims&page=claims");
             exit();
         }
-
-        // Display the form for editing
         ?>
         <!DOCTYPE html>
         <html lang="en">

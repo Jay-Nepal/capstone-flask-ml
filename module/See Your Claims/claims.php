@@ -42,15 +42,7 @@ if ($result->num_rows > 0) {
     // Close table
     echo "</table>";
 } else {
-    echo "0 results";
+    echo "0 claims";
 }
 
 ?>
-
-<!-- Add JavaScript function for editing -->
-<script>
-    function editRow(id) {
-        // Redirect to the edit page with the specific row ID
-        window.location.href = "user.php?module=See%20Your%20Claims&page=edit_page&id=" + id;
-    }
-</script>
