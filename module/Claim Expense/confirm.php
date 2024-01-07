@@ -32,7 +32,6 @@ include 'db_connection.php';
       header("Location: user.php?module=Claim%20Expense&page=submitted&status=$message&label=$label&total=$total&date=$date");
   }
    
-
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

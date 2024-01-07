@@ -72,6 +72,6 @@ if ($result->num_rows > 0) {
 <script>
     function editRow(id) {
         // Redirect to the edit page with the specific row ID
-        window.location.href = "user.php?module=See%20All%20Claims&page=edit_page&id=" + id;
+        window.location.href = "admin.php?module=See%20All%20Claims&page=edit_page&id=" + id;
     }
 </script>

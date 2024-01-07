@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
             $db->query($updateSql);
 
             // Redirect back to the main page after saving changes
-            header("Location: user.php?module=See%20All%20Claims&page=claims");
+            header("Location: admin.php?module=See%20All%20Claims&page=claims");
             exit();
         }
         ?>
